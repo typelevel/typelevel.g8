@@ -1,5 +1,9 @@
 ThisBuild / tlBaseVersion := "0.0" // your current series x.y
 
+// We don't want to publish
+ThisBuild / tlCiReleaseTags := false
+ThisBuild / tlCiReleaseBranches := Nil
+
 ThisBuild / githubWorkflowBuild := Seq(
   WorkflowStep.Sbt(
     List("g8Test"),
@@ -10,7 +14,6 @@ ThisBuild / githubWorkflowBuild := Seq(
 val PrimaryOS = "ubuntu-latest"
 val MacOS = "macos-latest"
 ThisBuild / githubWorkflowOSes := Seq(PrimaryOS, MacOS)
-ThisBuild / githubWorkflowPublishTargetBranches := Seq.empty
 
 val PrimaryJava = JavaSpec.temurin("8")
 val LTSJava = JavaSpec.temurin("17")
