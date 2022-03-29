@@ -1,3 +1,21 @@
+ThisBuild / tlBaseVersion := "0.0" // your current series x.y
+
+ThisBuild / githubWorkflowBuild := Seq(
+  WorkflowStep.Sbt(
+    List("g8Test"),
+    name = Some("Test generated template")
+  )
+)
+
+val PrimaryOS = "ubuntu-latest"
+val MacOS = "macos-latest"
+ThisBuild / githubWorkflowOSes := Seq(PrimaryOS, MacOS)
+ThisBuild / githubWorkflowPublishTargetBranches := Seq.empty
+
+val PrimaryJava = JavaSpec.temurin("8")
+val LTSJava = JavaSpec.temurin("17")
+ThisBuild / githubWorkflowJavaVersions := Seq(PrimaryJava, LTSJava)
+
 // This build is for this Giter8 template.
 // To test the template run `g8` or `g8Test` from the sbt session.
 // See http://www.foundweekends.org/giter8/testing.html#Using+the+Giter8Plugin for more details.
