@@ -1,4 +1,5 @@
-ThisBuild / tlBaseVersion := "$sbt_typelevel_baseversion$" // your current series x.y
+// https://typelevel.org/sbt-typelevel/faq.html#what-is-a-base-version-anyway
+ThisBuild / tlBaseVersion := "0.0" // your current series x.y
 
 ThisBuild / organization := "$organization$"
 ThisBuild / organizationName := "$organization_name$"
