@@ -1,1 +1,1 @@
-> ;test; scalafmtCheckAll; githubWorkflowCheck; headerCheckAll
+> ;githubWorkflowCheck; headerCheckAll; scalafmtCheckAll; scalafmtSbtCheck; Test/scalaJSLinkerResult; test
