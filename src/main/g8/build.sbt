@@ -12,6 +12,9 @@ ThisBuild / developers := List(
 // publish to s01.oss.sonatype.org (set to true to publish to oss.sonatype.org instead)
 ThisBuild / tlSonatypeUseLegacyHost := false
 
+// publish website from this branch
+ThisBuild / tlSitePublishBranch := Some("main")
+
 val Scala213 = "$scala_version$"
 ThisBuild / crossScalaVersions := Seq(Scala213, "$other_scala_version$")
 ThisBuild / scalaVersion := Scala213 // the default Scala
@@ -30,3 +33,5 @@ lazy val core = crossProject(JVMPlatform, JSPlatform)
       "org.typelevel" %%% "munit-cats-effect-3" % "1.0.7" % Test
     )
   )
+
+lazy val docs = project.in(file("site")).enablePlugins(TypelevelSitePlugin)
