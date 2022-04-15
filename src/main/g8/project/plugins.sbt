@@ -1,2 +1,2 @@
-addSbtPlugin("org.typelevel" % "sbt-typelevel" % "$sbt_typelevel_version$")
-addSbtPlugin("org.typelevel" % "sbt-typelevel-site" % "$sbt_typelevel_version$")
+addSbtPlugin("org.typelevel" % "sbt-typelevel" % "0.4.9")
+addSbtPlugin("org.typelevel" % "sbt-typelevel-site" % "0.4.9")
