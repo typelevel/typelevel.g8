@@ -25,7 +25,7 @@ ThisBuild / githubWorkflowJavaVersions := Seq(PrimaryJava, LTSJava)
 lazy val root = (project in file("."))
   .enablePlugins(ScriptedPlugin)
   .settings(
-    name := "proto-typelevel.g8",
+    name := "typelevel.g8",
     Test / test := {
       val _ = (Test / g8Test).toTask("").value
     },
