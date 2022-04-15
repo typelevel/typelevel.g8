@@ -1,7 +1,7 @@
 A [Giter8][g8] template for [sbt-typelevel][sbt-typelevel]!
 
 ```sbt
-sbt new valencik/proto-typelevel.g8
+sbt new typelevel/typelevel.g8
 ```
 
 
