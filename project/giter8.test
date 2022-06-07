@@ -1,1 +1,1 @@
-> ;githubWorkflowCheck; headerCheckAll; scalafmtCheckAll; scalafmtSbtCheck; Test/scalaJSLinkerResult; test; docs/tlSiteGenerate
+> ;githubWorkflowCheck; headerCheckAll; scalafmtCheckAll; scalafmtSbtCheck; scalafixAll --check; Test/scalaJSLinkerResult; test; docs/tlSiteGenerate
