@@ -23,3 +23,9 @@ metals.sbt
 
 # npm
 node_modules/
+
+# nix
+.direnv/
+
+# macOS
+.DS_Store
