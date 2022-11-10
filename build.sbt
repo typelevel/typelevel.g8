@@ -38,3 +38,26 @@ lazy val root = (project in file("."))
     scriptedLaunchOpts ++= List("-Xms1024m", "-Xmx1024m", "-XX:ReservedCodeCacheSize=128m", "-Xss2m", "-Dfile.encoding=UTF-8"),
     resolvers += Resolver.url("typesafe", url("https://repo.typesafe.com/typesafe/ivy-releases/"))(Resolver.ivyStylePatterns)
   )
+
+lazy val copyTask = taskKey[Unit]("A sample task.")
+
+lazy val updateGHWorkflow = (project in file(".update"))
+  .enablePlugins(ScriptedPlugin)
+    .settings(
+      Test / test := {
+        val _ = (Test / g8Test).toTask("").value
+      },
+      scriptedLaunchOpts ++= List("-Xms1024m", "-Xmx1024m", "-XX:ReservedCodeCacheSize=128m", "-Xss2m", "-Dfile.encoding=UTF-8"),
+      resolvers += Resolver.url("typesafe", url("https://repo.typesafe.com/typesafe/ivy-releases/"))(Resolver.ivyStylePatterns),
+      Compile / g8 / sources :=
+        Seq((LocalRootProject / baseDirectory).value /  "src" / "main" / "g8"),
+      Compile / g8 / unmanagedSourceDirectories :=
+        Seq((LocalRootProject / baseDirectory).value /  "src" / "main" / "g8"),
+      copyTask := {
+        IO.copy(Seq((
+          baseDirectory.value / ".github/workflows/ci.yml",
+          (LocalRootProject / baseDirectory).value / "src/main/g8/.github/workflows/ci.yml"
+        )))
+      },
+      g8TestScript := (LocalRootProject / baseDirectory).value / "project/gen-inner-workflow.test"
+    )
