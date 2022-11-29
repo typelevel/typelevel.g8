@@ -28,7 +28,7 @@ lazy val root = (project in file("."))
     name := "typelevel.g8",
     libraryDependencies ++= Seq(
       "org.typelevel" %%% "cats-core" % "2.9.0",
-      "org.typelevel" %%% "cats-effect" % "3.4.1",
+      "org.typelevel" %%% "cats-effect" % "3.4.2",
       "org.scalameta" %%% "munit" % "0.7.29" % Test,
       "org.typelevel" %%% "munit-cats-effect-3" % "1.0.7" % Test
     ),
