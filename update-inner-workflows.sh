@@ -16,6 +16,3 @@ git restore project/giter8.test
 
 echo "Running original giter8.test"
 sbt g8Test
-
-echo "inner github workflows have been regenerated"
-git status
