@@ -59,16 +59,16 @@ jobs:
         if: matrix.java == 'temurin@8' && matrix.os == 'ubuntu-latest'
         run: sbt 'project ${{ matrix.project }}' '++ ${{ matrix.scala }}' headerCheckAll scalafmtCheckAll 'project /' scalafmtSbtCheck
 
+      - name: Check scalafix lints
+        if: matrix.java == 'temurin@8' && matrix.os == 'ubuntu-latest'
+        run: sbt 'project ${{ matrix.project }}' '++ ${{ matrix.scala }}' 'scalafixAll --check'
+
       - name: scalaJSLink
         if: matrix.project == 'rootJS'
         run: sbt 'project ${{ matrix.project }}' '++ ${{ matrix.scala }}' Test/scalaJSLinkerResult
 
       - name: Test
         run: sbt 'project ${{ matrix.project }}' '++ ${{ matrix.scala }}' test
-
-      - name: Check scalafix lints
-        if: matrix.java == 'temurin@8'
-        run: sbt 'project ${{ matrix.project }}' '++${{ matrix.scala }}' 'scalafixAll --check'
 
       - name: Check binary compatibility
         if: matrix.java == 'temurin@8' && matrix.os == 'ubuntu-latest'
