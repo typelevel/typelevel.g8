@@ -3,6 +3,7 @@ ThisBuild / tlBaseVersion := "0.0" // your current series x.y
 
 ThisBuild / organization := "$organization$"
 ThisBuild / organizationName := "$organization_name$"
+ThisBuild / startYear := Some(2023)
 ThisBuild / licenses := Seq(License.Apache2)
 ThisBuild / developers := List(
   // your GitHub handle and name
@@ -27,8 +28,8 @@ lazy val core = crossProject(JVMPlatform, JSPlatform)
   .settings(
     name := "$name;format="norm"$",
     libraryDependencies ++= Seq(
-      "org.typelevel" %%% "cats-core" % "2.7.0",
-      "org.typelevel" %%% "cats-effect" % "3.3.12",
+      "org.typelevel" %%% "cats-core" % "2.9.0",
+      "org.typelevel" %%% "cats-effect" % "3.5.1",
       "org.scalameta" %%% "munit" % "0.7.29" % Test,
       "org.typelevel" %%% "munit-cats-effect-3" % "1.0.7" % Test
     )
