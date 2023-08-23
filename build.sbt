@@ -3,6 +3,7 @@ ThisBuild / tlBaseVersion := "0.0" // your current series x.y
 // We don't want to publish
 ThisBuild / tlCiReleaseTags := false
 ThisBuild / tlCiReleaseBranches := Nil
+ThisBuild / tlCiDependencyGraphJob := false
 
 ThisBuild / githubWorkflowBuild := Seq(
   WorkflowStep.Sbt(
