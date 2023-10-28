@@ -25,6 +25,7 @@ ThisBuild / githubWorkflowJavaVersions := Seq(PrimaryJava, LTSJava)
 // See http://www.foundweekends.org/giter8/testing.html#Using+the+Giter8Plugin for more details.
 lazy val root = (project in file("."))
   .enablePlugins(ScriptedPlugin)
+  .aggregate(phantomDependencies)
   .settings(
     name := "typelevel.g8",
     Test / test := {
@@ -36,11 +37,12 @@ lazy val root = (project in file("."))
 
 lazy val phantomDependencies = project
   .settings(
-    crossScalaVersions := Seq("2.13.10", "3.1.1"),
     libraryDependencies ++= Seq(
       "org.typelevel" %%% "cats-core" % "2.9.0",
       "org.typelevel" %%% "cats-effect" % "3.5.1",
       "org.scalameta" %%% "munit" % "0.7.29" % Test,
-      "org.typelevel" %%% "munit-cats-effect-3" % "1.0.7" % Test
+      "org.typelevel" %%% "munit-cats-effect-3" % "1.0.7" % Test,
+      "org.scala-lang"  % "scala-library" % "2.13.10",
+      "org.scala-lang"  % "scala3-library_3" % "3.1.0"
     ),
   )
