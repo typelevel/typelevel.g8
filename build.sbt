@@ -42,6 +42,6 @@ lazy val phantomDependencies = project
       "org.scalameta" %%% "munit" % "0.7.29" % Test,
       "org.typelevel" %%% "munit-cats-effect-3" % "1.0.7" % Test,
       "org.scala-lang"  % "scala-library" % "2.13.13",
-      "org.scala-lang"  % "scala3-library_3" % "3.3.3"
+      "org.scala-lang"  % "scala3-library_3" % "3.4.2"
     ),
   )
