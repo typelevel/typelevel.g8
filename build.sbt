@@ -17,8 +17,13 @@ val MacOS = "macos-latest"
 ThisBuild / githubWorkflowOSes := Seq(PrimaryOS, MacOS)
 
 val PrimaryJava = JavaSpec.temurin("8")
-val LTSJava = JavaSpec.temurin("17")
+val LTSJava = JavaSpec.temurin("21")
 ThisBuild / githubWorkflowJavaVersions := Seq(PrimaryJava, LTSJava)
+
+// MacOS runners do not have temurin@8
+ThisBuild / githubWorkflowBuildMatrixExclusions := Seq(
+  MatrixExclude(Map("os" -> MacOS, "java" -> JavaSpec.temurin("8").render))
+)
 
 // This build is for this Giter8 template.
 // To test the template run `g8` or `g8Test` from the sbt session.
