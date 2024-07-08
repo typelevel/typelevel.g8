@@ -17,8 +17,13 @@ val MacOS = "macos-latest"
 ThisBuild / githubWorkflowOSes := Seq(PrimaryOS, MacOS)
 
 val PrimaryJava = JavaSpec.temurin("8")
-val LTSJava = JavaSpec.temurin("17")
+val LTSJava = JavaSpec.temurin("21")
 ThisBuild / githubWorkflowJavaVersions := Seq(PrimaryJava, LTSJava)
+
+// MacOS runners do not have temurin@8
+ThisBuild / githubWorkflowBuildMatrixExclusions := Seq(
+  MatrixExclude(Map("os" -> MacOS, "java" -> JavaSpec.temurin("8").render))
+)
 
 // This build is for this Giter8 template.
 // To test the template run `g8` or `g8Test` from the sbt session.
@@ -39,9 +44,9 @@ lazy val phantomDependencies = project
     libraryDependencies ++= Seq(
       "org.typelevel" %%% "cats-core" % "2.10.0",
       "org.typelevel" %%% "cats-effect" % "3.5.4",
-      "org.scalameta" %%% "munit" % "0.7.29" % Test,
+      "org.scalameta" %%% "munit" % "1.0.0" % Test,
       "org.typelevel" %%% "munit-cats-effect" % "2.0.0" % Test,
-      "org.scala-lang"  % "scala-library" % "2.13.13",
+      "org.scala-lang"  % "scala-library" % "2.13.14",
       "org.scala-lang"  % "scala3-library_3" % "3.3.3"
     ),
   )
