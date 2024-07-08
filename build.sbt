@@ -42,7 +42,7 @@ lazy val root = (project in file("."))
 lazy val phantomDependencies = project
   .settings(
     libraryDependencies ++= Seq(
-      "org.typelevel" %%% "cats-core" % "2.10.0",
+      "org.typelevel" %%% "cats-core" % "2.12.0",
       "org.typelevel" %%% "cats-effect" % "3.5.4",
       "org.scalameta" %%% "munit" % "1.0.0" % Test,
       "org.typelevel" %%% "munit-cats-effect" % "2.0.0" % Test,
