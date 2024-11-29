@@ -43,7 +43,7 @@ lazy val phantomDependencies = project
   .settings(
     libraryDependencies ++= Seq(
       "org.typelevel" %%% "cats-core" % "2.12.0",
-      "org.typelevel" %%% "cats-effect" % "3.5.6",
+      "org.typelevel" %%% "cats-effect" % "3.5.7",
       "org.scalameta" %%% "munit" % "1.0.2" % Test,
       "org.typelevel" %%% "munit-cats-effect" % "2.0.0" % Test,
       "org.scala-lang"  % "scala-library" % "2.13.15",
