@@ -12,7 +12,7 @@ Features
 - [sbt-typelevel-site][sbt-typelevel-site]
 - Nix Flake using [typelevel-nix][typelevel-nix]
 - Basic .gitignore
-- Scala code of conduct
+- Typelevel code of conduct
 
 
 Template license
