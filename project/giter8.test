@@ -1,2 +1,1 @@
-> githubWorkflowGenerate
-$ exec cp .github/workflows/ci.yml /home/runner/scala-steward/workspace/repos/typelevel/typelevel.g8/src/main/g8/.github/workflows/ci.yml
+> ;githubWorkflowCheck; headerCheckAll; scalafmtCheckAll; scalafmtSbtCheck; scalafixAll --check; Test/scalaJSLinkerResult; test; docs/tlSiteGenerate
