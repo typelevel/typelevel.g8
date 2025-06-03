@@ -10,9 +10,6 @@ ThisBuild / developers := List(
   tlGitHubDev("$github_username$", "$contributor_name$")
 )
 
-// publish to s01.oss.sonatype.org (set to true to publish to oss.sonatype.org instead)
-ThisBuild / tlSonatypeUseLegacyHost := false
-
 // publish website from this branch
 ThisBuild / tlSitePublishBranch := Some("main")
 
