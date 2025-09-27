@@ -1,6 +1,6 @@
 addSbtPlugin("org.typelevel" % "sbt-typelevel" % "0.8.0")
 addSbtPlugin("org.typelevel" % "sbt-typelevel-site" % "0.8.0")
 addSbtPlugin("org.typelevel" % "sbt-typelevel-scalafix" % "0.8.0")
-addSbtPlugin("org.foundweekends.giter8" %% "sbt-giter8" % "0.17.0")
+addSbtPlugin("org.foundweekends.giter8" %% "sbt-giter8" % "0.18.0")
 addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.18.2")
 addSbtPlugin("org.scalameta" % "sbt-mdoc" % "2.7.2")
